@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/server.js';
+import { ServerStyleSheet } from 'styled-components';
+
 import StaticHtml from './static-html.js';
 
 const reactTypeof = Symbol.for('react.element');
@@ -53,10 +55,18 @@ function renderToStaticMarkup(Component, props, children, metadata) {
 		children: children != null ? React.createElement(StaticHtml, { value: children }) : undefined,
 	});
 	let html;
-	if (metadata && metadata.hydrate) {
-		html = ReactDOM.renderToString(vnode);
-	} else {
-		html = ReactDOM.renderToStaticMarkup(vnode);
+	const sheet = new ServerStyleSheet();
+	try {
+		if (metadata && metadata.hydrate) {
+			html = ReactDOM.renderToString(sheet.collectStyles(vnode));
+		} else {
+			html = ReactDOM.renderToStaticMarkup(sheet.collectStyles(vnode));
+		}
+		const styleTags = sheet.getStyleTags();
+	} catch (err) {
+		console.error(err);
+	} finally {
+		sheet.seal();
 	}
 	return { html };
 }
