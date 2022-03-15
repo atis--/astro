@@ -1,0 +1,31 @@
+{
+  "name": "@astrojs/renderer-grommet",
+  "description": "Use React Grommet components within Astro",
+  "version": "0.5.0",
+  "type": "module",
+  "author": "withastro; atis--",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/astro--/astro.git",
+    "directory": "packages/renderers/renderer-grommet"
+  },
+  "bugs": "https://github.com/atis--/astro/issues",
+  "homepage": "https://astro.build",
+  "exports": {
+    ".": "./index.js",
+    "./*": "./*",
+    "./client.js": "./client.js",
+    "./server.js": "./server.js",
+    "./package.json": "./package.json",
+    "./jsx-runtime": "./jsx-runtime.js"
+  },
+  "dependencies": {
+    "@babel/plugin-transform-react-jsx": "^7.17.3",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "engines": {
+    "node": "^14.15.0 || >=16.0.0"
+  }
+}
