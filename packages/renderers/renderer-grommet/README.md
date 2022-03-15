@@ -1,13 +1,13 @@
-# atis--/renderer-grommet
+# atis/renderer-grommet
 
 This is a plugin for [Astro][astro] apps that enables server-side rendering of Grommet React components.
 
 ## Installation
 
-Install `@atis--/renderer-grommet` and then add it to your `astro.config.mjs` in the `renderers` property:
+Install `@atis/renderer-grommet` and then add it to your `astro.config.mjs` in the `renderers` property:
 
 ```
-npm install @atis--/renderer-grommet
+npm install @atis/renderer-grommet
 ```
 
 __astro.config.mjs__
@@ -15,7 +15,7 @@ __astro.config.mjs__
 ```js
 export default {
   renderers: [
-    '@atis--/renderer-grommet'
+    '@atis/renderer-grommet'
   ]
 }
 ```
