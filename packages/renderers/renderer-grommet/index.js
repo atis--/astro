@@ -1,5 +1,5 @@
 export default {
-	name: '@astrojs/renderer-react',
+	name: '@atis--/renderer-grommet',
 	client: './client.js',
 	server: './server.js',
 	jsxImportSource: 'react',
@@ -13,7 +13,7 @@ export default {
 					{},
 					{
 						runtime: 'automatic',
-						importSource: '@astrojs/renderer-react',
+						importSource: '@atis--/renderer-grommet',
 					}
 				),
 			],
@@ -22,8 +22,8 @@ export default {
 	viteConfig() {
 		return {
 			optimizeDeps: {
-				include: ['@astrojs/renderer-react/client.js', 'react', 'react/jsx-runtime', 'react/jsx-dev-runtime', 'react-dom'],
-				exclude: ['@astrojs/renderer-react/server.js'],
+				include: ['@atis--/renderer-grommet/client.js', 'react', 'react/jsx-runtime', 'react/jsx-dev-runtime', 'react-dom'],
+				exclude: ['@atis--/renderer-grommet/server.js'],
 			},
 			resolve: {
 				dedupe: ['react', 'react-dom'],
