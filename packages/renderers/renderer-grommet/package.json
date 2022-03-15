@@ -27,5 +27,8 @@
   },
   "engines": {
     "node": "^14.15.0 || >=16.0.0"
+  },
+  "devDependencies": {
+    "babel-plugin-styled-components": "^2.0.6"
   }
 }
